@@ -10,6 +10,7 @@
      <!--div head-->
     <div id="btn-head" class="btn-head">
         <h2>Postulante</h2>
+        <h3></h3>
     </div>
 {% block navbar %}
      <!--div nav o menu-->
@@ -17,10 +18,13 @@
 
         <div class="dropdown">
             <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'crearPostulante' %}">Nuevo Postulante</a></li>
+                {% if perms.Postulante.view_Postulante %}
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="">Nuevo Evaluadores</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="">Nuevo Comision</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="">Nuevo Par Evaluador</a></li>
+                {% endif %}
             </ul>
         </div>
 

@@ -25,7 +25,7 @@ SECRET_KEY = 'a@^e(-yj+f7newch7o@63fcfb0t68%*0xmoo$c7*+vbm6r3w#('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['docente.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'docente.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'docente',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'bm9p5zlpcdidtfxhgav5',
+        'USER': 'unkzniiazzaoxv3c',
+        'PASSWORD': 'pbgzAtaNoS5hF7wl2Ok6',
+        'HOST': 'bm9p5zlpcdidtfxhgav5-mysql.services.clever-cloud.com',
+        'PORT': '3306',
     }
 }
 
