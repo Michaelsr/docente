@@ -1,0 +1,22 @@
+{% load static %}
+{% block content %}
+
+    <h1>Registre Usuario</h1>
+	<div id="table-menu">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary ">Guardar</button>
+            <a class="btn btn-primary" href="{% url 'logout' %}" class="title-menu-enlace">Salir</a>
+        </form>
+    </div>
+
+    {%  if messages %}
+        {% for message in messages %}
+        <div id="notificacion" class="notification {{ message.tags}}">
+            <h4>{{ message }}</h4>
+        </div>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}

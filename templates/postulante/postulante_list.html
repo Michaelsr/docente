@@ -1,0 +1,47 @@
+{% extends 'menu/index_menu.html' %}
+{% load static %}
+{% block content %}
+    <!--table Cliente -->
+<div id="table-menu">
+    <div id="nav-bus">
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+        <a id="ico-bus" type="button" data-toggle="modal"  href="{% url 'crearPostulante' %}"><span class="glyphicon glyphicon-plus"></span></a>
+    </div>
+    <br>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Archivo</th>
+                <th>Detalle</th>
+                <th>Entrevista</th>
+                <th>Nota</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            {% if object_list %}
+            {% for postulante in object_list %}
+            <tr>
+                <td>{{ postulante.Nombres }}</td>
+                <td>{{ postulante.Apellidos }}</td>
+                <td>{{ postulante.Correo }}</td>
+                <td>{{ postulante.Archivo }}</td>
+                <td>{{ postulante.Detalle }}</td>
+                <td>{{ postulante.Entrevista }}</td>
+                <td>{{ postulante.Nota }}</td>
+                <th>
+                    <a class="btn btn-primary" href="{% url 'editarPostulante' postulante.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a class="btn btn-danger" href="{% url 'eliminarPostulante' postulante.id %}"><span class="glyphicon glyphicon-trash"></span></a>
+                </th>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <h1>No hay registros</h1>
+            {% endif %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}

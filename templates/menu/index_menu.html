@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Consultoria</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+     <!--div head-->
+    <div id="btn-head" class="btn-head">
+        <h2>Postulante</h2>
+    </div>
+{% block navbar %}
+     <!--div nav o menu-->
+    <div class="container">
+
+        <div class="dropdown">
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'crearPostulante' %}">Nuevo Postulante</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">Nuevo Evaluadores</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">Nuevo Comision</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">Nuevo Par Evaluador</a></li>
+            </ul>
+        </div>
+
+        <hr>
+        
+        <div class="dropdown">
+            <a href="{% url 'logout' %}" class="title-menu-enlace">Salir</a>
+        </div>
+        </ul>
+    </div>
+{% endblock %}
+    {% block content %}
+    {% endblock %}
+
+
+	{% block footer %}
+	{% endblock%}
+</body>
+</html>

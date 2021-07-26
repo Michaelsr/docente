@@ -1,0 +1,20 @@
+{% load static %}
+{% block content %}
+    
+    <form method="post">
+        {% csrf_token %}
+            <div class="contenedor-form">
+                <div class="togglee">
+                    <span></span>
+                </div>
+                <div class="formulario">
+                    <h2>Inicio de Sesion</h2>
+                    <form action="#">
+                        <input type="text" placeholder="Usuario" required name="username">
+                        <input type="password" placeholder="Contraseña" required name="password">
+                        <input type="submit" value="Ingresar">
+                    </form>
+                </div>
+            </div>
+    </form>
+{% endblock %}
