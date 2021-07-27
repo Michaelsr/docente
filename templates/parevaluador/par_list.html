@@ -1,0 +1,37 @@
+{% extends 'menu/index_menu.html' %}
+{% load static %}
+{% block content %}
+    <!--table Cliente -->
+<div id="table-menu">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Comision</th>
+                <th>Detalle</th>
+                <th>Pareva</th>
+                <th>Nota</th>
+                <th>Opcion</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            {% if object_list %}
+            {% for parevaluador in object_list %}
+            <tr>
+                <td>{{ parevaluador.Comision }}</td>
+                <td>{{ parevaluador.Detalle }}</td>
+                <td>{{ parevaluador.Pareva }}</td>
+                <td>{{ parevaluador.Nota }}</td>
+                
+                <th>
+                    <a class="btn btn-primary" href="{% url 'editarparevaluador' parevaluador.id %}">Editar</a>
+                    <a class="btn btn-danger" href="{% url 'eliminarparevaluador' parevaluador.id %}">Eliminar</a>
+                </th>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <h1>No hay registros</h1>
+            {% endif %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}

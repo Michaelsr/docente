@@ -21,6 +21,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', LoginView.as_view(template_name='login_index.html'), name='login'),
 
+    url(r'^', include('apps.comision.urls')),
+    url(r'^', include('apps.evaluadores.urls')),
+    url(r'^', include('apps.parevaluador.urls')),
     url(r'^', include('apps.postulante.urls')),
 
     path('logout/', LogoutView.as_view(template_name='usuario/logout.html'), name='logout'),

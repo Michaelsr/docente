@@ -21,9 +21,21 @@
                 
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'crearPostulante' %}">Nuevo Postulante</a></li>
                 {% if perms.Postulante.view_Postulante %}
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="">Nuevo Evaluadores</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="">Nuevo Comision</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="">Nuevo Par Evaluador</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'crearevaluadores' %}">Nuevo Evaluadores</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'crearComision' %}">Nuevo Comision</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'crearparevaluador' %}">Nuevo Par Evaluador</a></li>
+                {% endif %}
+                
+            </ul>
+        </div>
+        <div class="dropdown">
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'listarPostulante' %}">Ver Postulante</a></li>
+                {% if perms.Postulante.view_Postulante %}
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'listarevaluadores' %}">Ver Evaluadores</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'listarComision' %}">Ver Comision</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'listarparevaluador' %}">Ver Par Evaluador</a></li>
                 {% endif %}
             </ul>
         </div>
