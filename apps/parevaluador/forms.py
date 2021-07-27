@@ -1,12 +1,9 @@
 from django import forms
-from django.db.models import fields
-from django.db.models.base import Model
-from django.forms import widgets
 from .models import Parevaluador
 
 class ParevaluadorForm(forms.ModelForm):
     class Meta: 
-        Model = Parevaluador
+        model = Parevaluador
         fields = [
             'Comision',
             'Detalle',
