@@ -19,7 +19,7 @@ class ComisionForm(forms.ModelForm):
             'Detalles':'Detalle',
         }
         widgets = {
-            'Postulante': forms.TextInput(attrs={'class': 'form-control'}),
+            'Postulante': forms.Select(attrs={'class': 'form-control'}),
             'Entrevista': forms.TextInput(attrs={'class': 'form-control'}),
             'Nota': forms.TextInput(attrs={'class': 'form-control'}),
             'Detalles': forms.TextInput(attrs={'class': 'form-control'}),
